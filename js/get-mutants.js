@@ -1,10 +1,12 @@
 var url = 'https://mutant-school.herokuapp.com/api/v1/mutants';
 
 function loadMutants(mutants) {
-  $.each(mutants, addMutant);
+  $.each(mutants, function(i, mutant) {
+    addMutant(mutant);
+  });
 }
 
-function addMutant(i, mutant) {
+function addMutant(mutant) {
   $('#mutantList').append('<li>' + mutant.mutant_name + '</li>');
 }
 

@@ -1,8 +1,15 @@
-var mutant = {
-  mutant_name: 'Michaellllllll',
-  real_name: 'Miiiiichaaeeel',
-  power: 'Yeah.'
-};
+$('#new_mutant').on('submit', handleCreateFormSubmit);
+
+function handleCreateFormSubmit(ev) {
+  ev.preventDefault();
+  var f = ev.currentTarget;
+  var mutant = {
+    mutant_name: f.mutantName.value,
+    real_name: f.realName.value,
+    power: f.power.value
+  };
+  createMutant(mutant);
+}
 
 function createMutant(mutant) {
   $.post({
@@ -11,7 +18,7 @@ function createMutant(mutant) {
       mutant: mutant
     },
     success: function(x) {
-      alert(x);
+      console.log(x.mutant_name);
     },
   });
 }

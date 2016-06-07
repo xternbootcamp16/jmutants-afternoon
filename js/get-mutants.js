@@ -5,7 +5,7 @@ function loadMutants(mutants) {
 }
 
 function addMutant(i, mutant) {
-  console.log(mutant.mutant_name);
+  $('#mutantList').append('<li>' + mutant.mutant_name + '</li>');
 }
 
 $.get({

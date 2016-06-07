@@ -7,7 +7,12 @@ function loadMutants(mutants) {
 }
 
 function addMutant(mutant) {
-  $('#mutantList').append('<li>' + mutant.mutant_name + '</li>');
+  var li = $('.template')
+    .clone()
+    .removeClass('template');
+
+  li.find('.mutant-name').text(mutant.mutant_name);
+  $('#mutantList').append(li);
 }
 
 $.get({

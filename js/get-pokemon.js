@@ -1,9 +1,8 @@
 var url = 'https://pokeapi.co/api/v2/pokemon/?limit=6&offset=20'
 
 var template = $('.template')
-  .clone()
+  .detach()
   .removeClass('template')
-  .detach();
 
 function loadPokemon(pokemon) {
   $.each(pokemon.results, function(i, mutant) {

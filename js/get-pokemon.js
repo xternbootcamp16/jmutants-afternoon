@@ -5,19 +5,19 @@ var template = $('.template')
   .removeClass('template')
 
 function loadPokemon(pokemon) {
-  $.each(pokemon.results, function(i, mutant) {
-    addMutant(mutant);
+  $.each(pokemon.results, function(i, pokemon) {
+    addPokemon(pokemon);
   });
 }
 
-function addMutant(mutant) {
+function addPokemon(pokemon) {
   var li = template.clone();
-  li.find('.mutant-name a')
-    .text(mutant.name)
-    .attr('href', mutant.url)
+  li.find('.pokemon-name a')
+    .text(pokemon.name)
+    .attr('href', pokemon.url)
 
-  li.attr('data-id', mutant.id);
-  $('#mutantList').append(li);
+  li.attr('data-id', pokemon.id);
+  $('#pokemonList').append(li);
 }
 
 $.get({
